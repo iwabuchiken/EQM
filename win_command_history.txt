@@ -31,6 +31,8 @@ pragma table_info(nr4)
 g p origin master && g p heroku master
 g p origin master && g p heroku master && heroku run rake db:migrate
 
+g p origin master
+
 g merge D-4_NR4 && g p origin master && g p heroku master && heroku run rake db:migrate
 g merge D-4_NR4 && g p origin master && g p heroku master
 g merge D-4_NR4 && g p origin master && g p heroku master && heroku open
@@ -65,7 +67,7 @@ heroku keys:add
 
 heroku create --stack cedar
 
-heroku rename cosmos-jqm-1
+heroku rename eqm
 
 heroku keys:add && heroku create --stack cedar && heroku rename cosmos-jqm-1
 
