@@ -1,0 +1,238 @@
+# Server & git
+a p && pushd C:\WORKS\WS\WS_Android_20130929_122122\EQM && gitk && rails s --port 3001
+
+# pushd
+a p && pushd C:\WORKS\WS\WS_Android_20130929_122122\EQM
+
+# pushd / No "a p"
+pushd C:\WORKS\WS\WS_Android_20130929_122122\EQM
+
+pushd C:\WORKS\WS\WS_Android_20130929_122122\EQM && gitk && rails s --port 3001
+
+# rails s/No git
+a p && pushd C:\WORKS\WS\WS_Android_20130929_122122\EQM && rails s --port 3001
+
+
+# CakePHP/NR4
+/rails_apps/nr4/cakephp-2.3.10
+
+# Backup files
+C:\WORKS\WS\WS_Android_20130929_122122\EQM\doc\backup\nr4
+
+# gitk
+pushd C:\WORKS\WS\WS_Android_20130929_122122\EQM && gitk
+
+[sqlite3]
+pushd C:\WORKS\WS\WS_Android_20130929_122122\EQM\db && sqlite3 development.sqlite3
+.explain on
+pragma table_info(nr4)
+
+[Push]
+g p origin master && g p heroku master
+g p origin master && g p heroku master && heroku run rake db:migrate
+
+g merge D-4_NR4 && g p origin master && g p heroku master && heroku run rake db:migrate
+g merge D-4_NR4 && g p origin master && g p heroku master
+g merge D-4_NR4 && g p origin master && g p heroku master && heroku open
+g co master && g merge D-4_NR4 && g p origin master && g p heroku master && heroku open
+
+[Git]
+git init && g a . && gitk
+g a . && gitk
+
+git log --grep=master -6
+
+g l --grep="\bm\b"
+
+#REF http://www.backlog.jp/git-guide/stepup/stepup5_3.html
+#REF http://git-scm.com/book/ja/Git-%E3%81%AE%E5%9F%BA%E6%9C%AC-%E3%82%BF%E3%82%B0
+git tag -am "SL setup done" sl_setup_done
+git push origin sl_setup_done
+
+
+
+[Set up 2013/05/17 12:23:23]----------------------------
+bundle install
+
+rails s --port 3001
+
+gem install heroku --no-ri --no-rdoc
+
+heroku keys:add
+
+		Found existing public key: C:/Users/IwabuchiKen/.ssh/id_rsa.pub
+		Uploading SSH public key C:/Users/IwabuchiKen/.ssh/id_rsa.pub... done
+
+heroku create --stack cedar
+
+heroku rename cosmos-jqm-1
+
+heroku keys:add && heroku create --stack cedar && heroku rename cosmos-jqm-1
+
+g p heroku master
+
+g p origin master && g p heroku master
+
+#heroku open
+
+============ OPERATIONS ============================
+rails generate controller admin main sub1 sub2
+
+rails g controller sample
+
+
+============STORAGE============================
+
+[B1 2013/05/17 12:23:23]----------------------------
+#rails generate scaffold Image file_name:string file_path:string memos:text tags:string table_name:string last_viewed_at:integer created_at_mill:integer updated_at_mill:integer date_added:integer date_modified:integer loc_file_id:integer loc_created_at:integer loc_modified_at:integer
+
+bundle exec rake db:migrate
+
+#g p origin master && g p heroku master && heroku run rake db:migrate
+
+g p origin master && g p heroku master
+
+[B2_v-2.1-e2 2013/05/28 16:39:26]----------------------------
+#rails generate controller admin main sub1 sub2
+
+[20131012_094128]----------------------------
+
+rails generate scaffold Setting mobile_view:boolean
+
+bundle exec rake db:migrate
+
+bundle exec rake assets:precompile
+
+#g p origin master && g p heroku master && heroku run rake db:migrate
+g p origin master && g p heroku master
+
+rails generate controller TwitterApp main sub1 sub2
+
+bundle exec rake db:migrate
+
+[20131019_002221]----------------------------
+
+rails generate scaffold Article line:text url:string vendor:string news_time:string genre:string cat:string subcat:string
+
+bundle exec rake db:migrate
+
+bundle exec rake db:rollback
+
+g merge D-4_NR4 && g p origin master && g p heroku master && heroku run rake db:migrate
+g merge D-4_NR4 && g p origin master && g p heroku master
+g merge D-4_NR4 && g p origin master && g p heroku master && heroku open
+g co master && g merge D-4_NR4 && g p origin master && g p heroku master && heroku open
+
+g p origin master && g p heroku master && heroku run rake db:migrate
+g p origin master && g p heroku master
+
+[20131024_060757]----------------------------
+
+rails generate scaffold Genre name:string code:string
+
+bundle exec rake db:migrate
+
+[25/10/2013 21:45:23]----------------------------
+rails generate scaffold KeyWordSet genre:string category:string keywords:text
+bundle exec rake db:migrate
+
+#REF http://tamosblog.wordpress.com/2013/03/11/assets/
+bundle exec rake assets:clean
+
+bundle exec rake assets:precompile
+
+[30/10/2013 00:49:34]----------------------------
+rails generate scaffold Category name:string genre_id:integer
+
+bundle exec rake db:migrate
+
+rails generate scaffold Keyword name:string genre_id:integer category_id:integer
+bundle exec rake db:migrate
+
+g p origin master && g p heroku master && heroku run rake db:migrate
+
+
+bundle exec rake assets:precompile
+
+[06/11/2013 06:51:13]----------------------------
+#rails generate scaffold SettingsNR4 sort_genre:integer sort_category:integer
+bundle exec rake db:migrate
+
+#rails generate migration AddColumnFilterGenreToSettingsNR4
+bundle exec rake db:migrate
+
+heroku run rake db:migrate
+
+rails generate scaffold Nr4::AdminNR4 sort_genre:integer sort_category:integer genre_id:integer, category_id:integer
+bundle exec rake db:migrate
+
+rails generate scaffold Nr4::EnvNR4 sort_genre:integer sort_category:integer genre_id:integer, category_id:integer
+bundle exec rake db:migrate
+
+rails destroy scaffold Nr4::EnvNR4
+
+rails destroy scaffold Nr4::AdminNR4
+
+bundle exec rake db:rollback STEP=1
+
+rails generate scaffold EnvNR4 sort_genre:integer sort_category:integer genre_id:integer, category_id:integer
+bundle exec rake db:migrate
+
+rails generate scaffold History line:text url:string vendor:string news_time:string genre:string cat:string subcat:string
+bundle exec rake db:migrate
+
+[06/11/2013 06:51:13]----------------------------
+#bundle update
+
+#rails generate migration AddColumnHistoryPaginationSizeToEnvNr4s
+
+bundle exec rake db:migrate
+
+#bundle exec rake db:rollback
+
+#bundle exec rake db:migrate
+
+[06/11/2013 06:51:13]----------------------------
+
+rails generate scaffold AiKodaka line:text cut_morph:text page:integer
+bundle exec rake db:migrate
+
+bundle exec rake assets:clean
+
+bundle exec rake assets:precompile
+
+[12/12/2013 00:10:09]----------------------------
+rails generate controller D3 main sub1 sub2 log
+rails destroy controller D3 main sub1 sub2 log
+
+[25/12/2013 01:37:03]----------------------------
+rails generate migration AddColumnContentToHistories
+bundle exec rake db:migrate
+
+[28/12/2013 08:39:37]----------------------------
+.explain on
+.tables
+pragma table_info(shopping_item)
+pragma table_info(genres);
+
+#rails generate scaffold Item store_id:integer name:string price:integer genre_id:integer yomi:string mobile_id:integer
+#rails generate scaffold SettingSL num_of_item_per_page:integer
+#bundle exec rake db:migrate
+
+bundle exec rake assets:clean && bundle exec rake assets:precompile
+
+[31/12/2013 10:24:07]----------------------------
+rails generate scaffold EQM main:string sub1:string sub1:string
+bundle exec rake db:migrate
+
+
+aa
+
+============RESOURCE============
+[Javascript]
+1. Edit js file
+2. Reboot server
+	=> Edition effective
+
+
+============EOF============
