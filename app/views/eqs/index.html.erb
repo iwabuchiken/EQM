@@ -1,0 +1,37 @@
+<h1>Listing eqs</h1>
+
+<table>
+  <tr>
+    <th>Published at</th>
+    <th>Occurred at</th>
+    <th>Epicenter</th>
+    <th>Longitude</th>
+    <th>Latitude</th>
+    <th>Depth</th>
+    <th>Magnitude</th>
+    <th>Info</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @eqs.each do |eq| %>
+  <tr>
+    <td><%= eq.published_at %></td>
+    <td><%= eq.occurred_at %></td>
+    <td><%= eq.epicenter %></td>
+    <td><%= eq.longitude %></td>
+    <td><%= eq.latitude %></td>
+    <td><%= eq.depth %></td>
+    <td><%= eq.magnitude %></td>
+    <td><%= eq.info %></td>
+    <td><%= link_to 'Show', eq %></td>
+    <td><%= link_to 'Edit', edit_eq_path(eq) %></td>
+    <td><%= link_to 'Destroy', eq, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Eq', new_eq_path %>

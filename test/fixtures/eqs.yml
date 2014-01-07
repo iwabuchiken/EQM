@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  published_at: MyString
+  occurred_at: MyString
+  epicenter: MyString
+  longitude: MyString
+  latitude: MyString
+  depth: MyString
+  magnitude: 1.5
+  info: MyText
+
+two:
+  published_at: MyString
+  occurred_at: MyString
+  epicenter: MyString
+  longitude: MyString
+  latitude: MyString
+  depth: MyString
+  magnitude: 1.5
+  info: MyText

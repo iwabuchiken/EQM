@@ -1,0 +1,49 @@
+<%= form_for(@eq) do |f| %>
+  <% if @eq.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@eq.errors.count, "error") %> prohibited this eq from being saved:</h2>
+
+      <ul>
+      <% @eq.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :published_at %><br />
+    <%= f.text_field :published_at %>
+  </div>
+  <div class="field">
+    <%= f.label :occurred_at %><br />
+    <%= f.text_field :occurred_at %>
+  </div>
+  <div class="field">
+    <%= f.label :epicenter %><br />
+    <%= f.text_field :epicenter %>
+  </div>
+  <div class="field">
+    <%= f.label :longitude %><br />
+    <%= f.text_field :longitude %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude %><br />
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :depth %><br />
+    <%= f.text_field :depth %>
+  </div>
+  <div class="field">
+    <%= f.label :magnitude %><br />
+    <%= f.text_field :magnitude %>
+  </div>
+  <div class="field">
+    <%= f.label :info %><br />
+    <%= f.text_area :info %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

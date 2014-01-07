@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Published at:</b>
+  <%= @eq.published_at %>
+</p>
+
+<p>
+  <b>Occurred at:</b>
+  <%= @eq.occurred_at %>
+</p>
+
+<p>
+  <b>Epicenter:</b>
+  <%= @eq.epicenter %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @eq.longitude %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @eq.latitude %>
+</p>
+
+<p>
+  <b>Depth:</b>
+  <%= @eq.depth %>
+</p>
+
+<p>
+  <b>Magnitude:</b>
+  <%= @eq.magnitude %>
+</p>
+
+<p>
+  <b>Info:</b>
+  <%= @eq.info %>
+</p>
+
+
+<%= link_to 'Edit', edit_eq_path(@eq) %> |
+<%= link_to 'Back', eqs_path %>
